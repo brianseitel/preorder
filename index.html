@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ark and The Empire - Pre-Order Now</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .landing-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+            max-width: 900px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .landing-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            animation: subtle-rotate 30s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes subtle-rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .book-cover {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .book-image {
+            width: 280px;
+            height: 400px;
+            background: url('https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_360,c_scale,dpr_1.5/jackets/9781035919161.jpg') no-repeat center center;
+            background-size: cover;
+            border-radius: 8px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .book-image:hover {
+            transform: perspective(1000px) rotateY(0deg) translateY(-5px);
+        }
+
+        .book-content {
+            padding: 20px 0;
+        }
+
+        .book-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .book-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .book-author {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-family: 'Georgia', 'Times New Roman', serif;
+        }
+
+        .book-description {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: justify;
+        }
+
+        .pre-order-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .pre-order-btn {
+            display: inline-block;
+            background: linear-gradient(145deg, #d4af37, #b8941f);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pre-order-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .pre-order-btn:hover::before {
+            left: 100%;
+        }
+
+        .pre-order-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .release-date {
+            font-size: 0.9rem;
+            color: #888;
+            text-align: center;
+        }
+
+        .decorative-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #d4af37, #b8941f);
+            margin: 20px 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .landing-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 30px;
+                text-align: center;
+            }
+
+            .book-image {
+                width: 220px;
+                height: 320px;
+                transform: none;
+            }
+
+            .book-title {
+                font-size: 2rem;
+            }
+
+            .book-description {
+                text-align: left;
+            }
+        }
+
+        /* Subtle animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .book-cover {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Focus states for accessibility */
+        .pre-order-btn:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="landing-section">
+            <div class="book-cover">
+                <div class="book-image"></div>
+                <div class="pre-order-section">
+                    <a href="#" class="pre-order-btn">Pre-Order Now</a>
+                    <p class="release-date">Available January 2026</p>
+                </div>
+            </div>
+            
+            <div class="book-content">
+                <h1 class="book-title">The Ark and The Empire</h1>
+                <p class="book-subtitle">The Shards Trilogy Book 1</p>
+                <p class="book-author">by Michael Livingston</p>
+                
+                <div class="decorative-line"></div>
+                
+                <p class="book-description">
+                    <span style="font-weight: bold;">The beginning of an epic historical fantasy series that reveals the hidden celestial battle behind the course of history.</span>
+                </p>
+                <p class="book-description">
+                    Julius Caesar is dead, assassinated on the senate floor, and the glory that is Rome has been torn in two...
+                </p>
+                <p class="book-description">
+                    Octavian, Caesar's ambitious great-nephew and adopted son, vies with Marc Antony and Cleopatra for control of Caesar's legacy. As civil war rages from Rome to Alexandria, and vast armies and navies battle for supremacy, a secret conflict may shape the course of history.
+                </p>
+                <p class="book-description">
+                    Juba, Numidian prince and adopted brother of Octavian, has embarked on a ruthless quest for the Shards of Heaven, lost treasures said to possess the very power of the gods-or the one God. Driven by vengeance, Juba has already attained the fabled Trident of Poseidon, which may also be the staff once wielded by Moses. Now he will stop at nothing to obtain the other Shards, even if it means burning the entire world to the ground.
+                </p>
+                <p class="book-description">
+                    Caught up in these cataclysmic events, and the hunt for the Shards, are a pair of exiled Roman legionnaires, a Greek librarian of uncertain loyalties, assassins, spies, slaves. . . and the ten-year-old daughter of Cleopatra herself.
+                </p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
